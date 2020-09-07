@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Gayathri:wght@100;400;700&family=Montserrat:wght@100;200;300;400;500&family=Nunito:wght@200;300;400;600&display=swap"
         rel="stylesheet">
@@ -16,15 +17,23 @@
 
     <header>
         <div class="header">
-            <div class="logo"><a href="imdex.html"><img src="images/itm-logo.png" alt="logo"></a></div>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Event</a></li>
-                    <li><a href="#">Books</a></li>
-                </ul>
+            
+            <div class="logo"><a href="index.html"><img src="images/itm-logo.png" alt="logo"></a></div>
+            <nav class="navbar">
+                <a href="#" class="toggle-button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+                <div class="navbar-links">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#event">Event</a></li>
+                        <li><a href="#books">Books</a></li>
+                    </ul>
+                </div>
             </nav>
         </div>
     </header>
@@ -234,6 +243,15 @@
             document.getElementById(searchBy).style.display = "block";
             evt.currentTarget.className += " active";
         }
+    </script>
+
+    <script>
+        const toggleButton = document.getElementsByClassName('toggle-button')[0]
+        const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+        toggleButton.addEventListener('click', () => {
+            navbarLinks.classList.toggle('active')
+        })
     </script>
 </body>
 
